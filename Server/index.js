@@ -2,7 +2,7 @@ const express = require('express')
 const { ConnectDB } = require('./Database')
 const { appRoutes } = require('./routes/dictionary')
 const cors = require('cors');
-
+const port = process.env.PORT || 8080
 
 
 const app = express()
@@ -19,9 +19,9 @@ app.use(appRoutes)
 
 ConnectDB().then(()=>{
 
-    app.listen(8080,()=>{
+    app.listen(port,()=>{
 
-        console.log("server is running at port 8080..")
+        console.log(`server is running at port ${port}..`)
 
     })
 }).catch((err)=>{
