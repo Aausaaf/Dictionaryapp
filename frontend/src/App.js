@@ -7,11 +7,11 @@ import {Searchcontexts} from './context/searchcontext'
 function App() {
   return (
     <>
-   <Searchcontexts>
+    <Searchcontexts> {/* wraping component so we can pass context api data to all component */}
    <Navbar/>
   
       <Routes>
-      <Route path='/' element={ <Home/>}/>
+      <Route path='/' element={ <Home/>}/> 
       </Routes>
       </Searchcontexts>
     </>

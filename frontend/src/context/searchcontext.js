@@ -7,7 +7,7 @@ export const  Searchcontext = createContext()
 
 export function Searchcontexts({children}){
 
-  const [istext,settext] = useState("")
+  const [istext,settext] = useState("") 
   const {store} = useSelector((store)=>store)
   const [data,setdata] = useState(store)
 
@@ -17,8 +17,8 @@ export function Searchcontexts({children}){
       settext(t)
 
     let datas =   store.filter((ele)=>{
-
-        return ele.name.includes(t)
+ 
+        return ele.name.includes(t)     // filter store data according to search input
 
       })
 

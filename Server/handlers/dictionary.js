@@ -3,7 +3,7 @@ const { default: axios } = require("axios")
 const { Dictionary } = require("../Database/dictionary")
 
 
-const getdata = async(req,res) => {
+const getdata = async(req,res) => {   // creating get request fuction when user request with get method this function will handle 
 
   try {
 
@@ -18,7 +18,7 @@ const getdata = async(req,res) => {
   }
 }
 
-const postdata = async(req,res) => {
+const postdata = async(req,res) => {  // creating post request when user request with post method this function will handle this
 
     let {text} = req.body
     
@@ -31,8 +31,8 @@ const postdata = async(req,res) => {
         }
     }
    
-   axios.get(`https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${text}`,t).then((ress)=>{
-      
+   axios.get(`https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${text}`,t).then((ress)=>{  
+       // fetching data from end pont that is oxford dictionary api with the help of axios
         if(ress.data)
         {
              
@@ -63,7 +63,7 @@ const uploaddata = async(data) => {
     }
 
 
-    const newword = await Dictionary.create(datas)
+    const newword = await Dictionary.create(datas) // adding data in mongodb database 
 
     res.status(200).send({message:"new word has Successfully added",word:newword})
 }

@@ -40,12 +40,12 @@ const Wordbody = (props) => {
 
        onClick={()=>{
 
-        props.handledisplay(false)
+        props.handledisplay(false) // hide wordbody component when user click on ×
 
       }}
 
        >×</Button>
-
+            
        <Typography color="#21191b"  fontWeight="760"  fontSize="30px" variant="h5" component="h1" marginLeft="4vw" marginTop="-3vh" >
   Resourse
 </Typography>

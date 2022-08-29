@@ -5,9 +5,9 @@ import { useSelector,useDispatch } from 'react-redux'
 import { postdata } from '../../Redux/actions'
 
 const Addword = (props) => {
-    const [input,setinput] = useState("")
+    const [input,setinput] = useState("") // this will handle and store  input value
    
-    const dispatch = useDispatch()
+    const dispatch = useDispatch() // this will use to dispatch action to redux reducer
 
   return (
 
@@ -73,7 +73,10 @@ sx={{
 
 onClick={()=>{
 
-    (input.length>0)?dispatch(postdata(input)):alert("Plsase Add word")
+    (input.length>0)?dispatch(postdata(input)):alert("Plsase Add word") // checking input value is empty or not if it is empty
+                                                                        // than alert will call and say following message
+                                                                        // if input value will be here than dispatch will call it takes two argument  
+                                                                        // action and payload, with the help of this we are able to post request to server add the word  
 
 }}>ADD
 </Button>

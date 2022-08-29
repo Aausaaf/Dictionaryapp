@@ -7,12 +7,12 @@ export const POST = "POST"
 
 
 
- export const get  = (payload) => ({
+ export const get  = (payload) => ({   // action return object for getting data 
   type:GET,
   payload
 })
 
-export const post  = (payload) => ({
+export const post  = (payload) => ({       // action return object for posting data 
     type:GET,
     payload
   })
@@ -22,9 +22,9 @@ export const post  = (payload) => ({
 
 
 
-export const getdata = () =>  (dispatch) => {
+export const getdata = () =>  (dispatch) => {     // action return function fetching data from server
 
-    axios.get(`http://localhost:8080/getdata`).then((res)=>{
+    axios.get(`https://serverappes.herokuapp.com/getdata`).then((res)=>{
 
         //console.log(res.data)
        
@@ -43,9 +43,9 @@ export const getdata = () =>  (dispatch) => {
 
 
  
-export const postdata = (data) => (dispatch) => {
+export const postdata = (data) => (dispatch) => {      // action return function posting or adding data on server
 
-    axios.post(`http://localhost:8080/postdata`,{
+    axios.post(`https://serverappes.herokuapp.com/postdata`,{
 
       text:data
 

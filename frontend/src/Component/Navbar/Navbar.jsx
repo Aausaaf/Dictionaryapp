@@ -5,7 +5,7 @@ import { Input, Typography } from '@mui/material'
 import { Searchcontext } from '../../context/searchcontext';
 export const Navbar = () => {
 
-  const {istext,handletext,data} = useContext(Searchcontext)
+  const {istext,handletext,data} = useContext(Searchcontext) // handle data of search input 
 
   return (
 
@@ -47,7 +47,7 @@ export const Navbar = () => {
 
     value={istext} onChange={(e)=>{
 
-    handletext(e.target.value)
+    handletext(e.target.value) // call handletext to add value to context api 
 
    }} >
 

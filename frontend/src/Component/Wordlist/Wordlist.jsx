@@ -9,13 +9,13 @@ import { Searchcontext } from '../../context/searchcontext';
 
 const Wordlist = (props) => {
 
-    const {store} = useSelector((store)=>store)
+    const {store} = useSelector((store)=>store) // with this we get data from redux store
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch() // with this we can dispatch action to redux for updating store data
 
-    const {data} = useContext(Searchcontext)
+    const {data} = useContext(Searchcontext) // with this we get input value of search input
 
-    const datas= (data.length==0)?store:data
+    const datas= (data.length==0)?store:data // this is checking if we do not get value from context api than we can use store value else data
 
   return (
 
