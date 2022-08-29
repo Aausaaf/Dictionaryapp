@@ -1,5 +1,5 @@
 # Dictionaryapp
-- In this app we can see word a lots of word and its meaning we can add word , we can search word as well
+- In this app we can see  a lots of word and its meaning we can add word , we can search word as well
 
 ## Tech Stack
 ### Reactjs , Redux , Material UI (for Frontend)
