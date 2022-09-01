@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { createContext } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-
+import axios from 'axios'
 export const  Searchcontext = createContext() 
 
 export function Searchcontexts({children}){
@@ -15,14 +15,24 @@ export function Searchcontexts({children}){
   {
 
       settext(t)
-
-    let datas =   store.filter((ele)=>{
- 
-        return ele.name.includes(t)     // filter store data according to search input
-
+      axios.get(`http://localhost:8080/search/${t}`).then((res)=>{
+        if(res.data)
+        {
+          setdata(res.data)
+        }
       })
+      if(data.length == 0)
+      {
+        setdata(store)
+      }
 
-      setdata(datas)
+    // let datas =   store.filter((ele)=>{
+ 
+    //     return ele.name.includes(t)     // filter store data according to search input
+
+    //   })
+
+    //  setdata(datas)
   }
   return (<>
 

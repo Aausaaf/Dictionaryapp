@@ -71,7 +71,14 @@ const uploaddata = async(data) => {
   
 
 
-   }  
+   }
+   
+   
+   const serachdata = async(req,res) => {
+        let regex = new RegExp(req.params.name,'i')
+     let data =    await Dictionary.find({name:regex})
+     res.send(data)
+   }
    
  
  
@@ -82,6 +89,7 @@ const uploaddata = async(data) => {
 module.exports = {
 
     getdata,
-    postdata
+    postdata,
+    serachdata
     
 }
